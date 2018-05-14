@@ -1,0 +1,14 @@
+# import Stock, StockSubscriptionPayload from "./generated/prisma.graphql"
+
+type Query {
+  stockList: [Stock!]!
+}
+
+type Mutation {
+  addStock(symbol: String!): Stock!
+  removeStock(symbol: String!): Stock!
+}
+
+type Subscription {
+  stockUpdates: StockSubscriptionPayload!
+}

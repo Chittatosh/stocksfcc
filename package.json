@@ -1,0 +1,53 @@
+{
+    "name": "stocksfcc",
+    "version": "1.0.0",
+    "description": "freeCodeCamp Chart the Stock Market",
+    "main": "src/index.js",
+    "repository": "https://github.com/Chittatosh/stocksfcc",
+    "author": "Chittatosh Undirwade <chittatosh.u@gmail.com>",
+    "license": "MIT",
+    "scripts": {
+        "start": "node src/index.js",
+        "dev": "npm-run-all --parallel start playground",
+        "playground": "graphql playground",
+        "prisma": "prisma",
+        "buildprod": "webpack --json > logs/wpstats.json",
+        "serverprod": "set NODE_ENV=production && node -r dotenv/config src",
+        "serverdev": "nodemon -e js,graphql --watch src -r dotenv/config src",
+        "clientdev": "webpack-dev-server --config ./webpack.mix.js",
+        "fullstackdev": "npm-run-all --parallel serverdev clientdev",
+        "graphqldev": "npm-run-all --parallel serverdev playground"
+    },
+    "dependencies": {
+        "apollo-cache-inmemory": "^1.2.1",
+        "apollo-client": "^2.3.1",
+        "apollo-link": "^1.2.2",
+        "apollo-link-http": "^1.5.4",
+        "apollo-link-ws": "^1.0.8",
+        "apollo-utilities": "^1.0.12",
+        "express": "^4.16.3",
+        "graphql-tag": "^2.9.2",
+        "graphql-yoga": "1.13.1",
+        "pretty-error": "^2.1.1",
+        "prisma-binding": "1.5.18",
+        "prop-types": "^15.6.1",
+        "react": "^16.3.2",
+        "react-apollo": "^2.1.4",
+        "react-dom": "^16.3.2",
+        "react-virtualized-select": "^3.1.3"
+    },
+    "devDependencies": {
+        "babel-loader": "^7.1.4",
+        "babel-polyfill": "^6.26.0",
+        "babel-preset-env": "^1.6.1",
+        "babel-preset-react": "^6.24.1",
+        "dotenv": "^5.0.1",
+        "graphql-cli": "2.15.14",
+        "nodemon": "^1.17.4",
+        "npm-run-all": "4.1.2",
+        "prisma": "1.7.4",
+        "webpack": "^4.7.0",
+        "webpack-cli": "^2.1.2",
+        "webpack-dev-server": "^3.1.4"
+    }
+}

@@ -1,0 +1,4 @@
+type Stock {
+  id: ID! @unique
+  symbol: String! @unique
+}
